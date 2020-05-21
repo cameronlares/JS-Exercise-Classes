@@ -39,23 +39,22 @@ class Airplane {
     - Give instances of Person a method `.toString()`:
         + It should return a string with `name` and `age`. Example: "Mary, 50"
 */
-
 class Person {
-  constructor(attributes){
-  this.name = attributes.name;
-  this.age = attributes.age;
-  this.stomach = [];
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+    this.stomach = [];
   }
   // special methods
-  eat(edible){
+  eat(edible) {
     if (this.stomach.length < 10) {
       this.stomach.push(edible);
     }
   }
-  poop(){
-    this.stomach=[];
+  poop() {
+    this.stomach = [];
   }
-  toString(){
+  toString() {
     return `${this.name}, ${this.age}`;
   }
 
@@ -92,7 +91,7 @@ console.log(personOne.stomach);
 class Car {
   constructor(attributes){
     // Special Abilities
-    this.tank = =0;
+    this.tank =0;
     this.odometer = 0;
     this.model= attributes.model;
     this.milesPerGallon= attributes.milesPerGallon;
@@ -103,7 +102,23 @@ class Car {
     this.tank = this.tank + gallons;
   }
 
+  drive(distance){
+    this.odometer= this.odometer+distance;
+    
+  }
+
 }// End Car Class
+
+const Tesla = new Car({
+tank:5,
+odometer:5500,
+model: 'X'
+MPG: 100
+})
+
+// For every 20 miles driven, it uses 1 gallon.
+
+
 /*
   TASK 3
     - Write a Lambdasian class.
@@ -117,8 +132,26 @@ class Car {
         + {name} and {location} of course come from the instance's own properties.
 */
 class Lambdasian {
+  constructor(attributes){
+this.name=attributes.name;
+this.age=attributes.age;
+this.location=attributes.location;
+  } // End Keys
 
-}
+  //Special Methods
+  speak(){
+    return `Hello my name is ${name}, I am from ${location}`;
+  }
+
+}// End Lambdasian Class
+
+const lambdaStudent = new Lambdasian({
+  name:'Cameron',
+  age:'30',
+  location:'New York City'
+});
+
+console.log(lambdaStudent.speak);
 
 /*
   TASK 4
