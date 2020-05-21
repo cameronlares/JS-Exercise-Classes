@@ -112,7 +112,7 @@ class Car {
 const Tesla = new Car({
 tank:5,
 odometer:5500,
-model: 'X'
+model: 'X',
 MPG: 100
 })
 
@@ -140,7 +140,7 @@ this.location=attributes.location;
 
   //Special Methods
   speak(){
-    return `Hello my name is ${name}, I am from ${location}`;
+    return `Hello my name is ${this.name}, I am from ${this.location}`;
   }
 
 }// End Lambdasian Class
@@ -151,7 +151,7 @@ const lambdaStudent = new Lambdasian({
   location:'New York City'
 });
 
-console.log(lambdaStudent.speak);
+console.log(lambdaStudent.speak());
 
 /*
   TASK 4
